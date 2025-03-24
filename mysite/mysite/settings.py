@@ -31,12 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
+    "django.contrib.admin",         # сайт администрирования
+    "django.contrib.auth",          # фреймворк аутентификации
+    "django.contrib.contenttypes",  # фреймворк типов контента
+    "django.contrib.sessions",      # фреймворк сеансов
+    "django.contrib.messages",      # фреймворк сообщений
+    "django.contrib.staticfiles",   # фреймворк управления статическими файлами# фреймворк сеансов
+    
+    "blog.apps.BlogConfig",
+    
 ]
 
 MIDDLEWARE = [
