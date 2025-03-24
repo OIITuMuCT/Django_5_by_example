@@ -6,6 +6,7 @@ from django.utils import timezone
 class Post(models.Model):
     """ Модель данных для поста блога attr: title, slug, body"""
     class Status(models.TextChoices):
+        """ Status Post: Draft or Publish """
         DRAFT = 'DF', 'Draft'
         PUBLISHED = 'PB', 'Published'
 
