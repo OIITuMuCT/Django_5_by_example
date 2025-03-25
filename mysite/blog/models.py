@@ -2,7 +2,13 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
-# Create your models here.
+class PublisherManager(models.Manager):
+    def get_queryset(self):
+        return (
+            super().get_queryset().filter(status=Post.Status.PUBLISHED)
+        )
+
+
 class Post(models.Model):
     """ Модель данных для поста блога attr: title, slug, body"""
     class Status(models.TextChoices):
@@ -26,7 +32,8 @@ class Post(models.Model):
         choices=Status,
         default=Status.DRAFT
     )
-    
+    objects = models.Manager()
+    published = PublisherManager()
     class Meta:
         ordering = ['-publish']
         indexes = [
