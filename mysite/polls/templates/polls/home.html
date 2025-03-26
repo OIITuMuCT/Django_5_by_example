@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+
+{% block title %}My polls{% endblock %}
+
+{% block content %}
+<h1>Это домашняя страница опросов</h1>
+
+{% for q in questions %}
+<ul>
+    <li>
+        {{ q }}
+    </li>
+</ul>
+    
+{% endfor %}
+
+{% comment %} {{questions}} {% endcomment %}
+{% endblock %}
