@@ -1,11 +1,13 @@
+# my-files
+chromedriver-linux64/
+env/
+mysite/blog/post_comment.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# my-files
-chromedriver-linux64/
-env/
 # C extensions
 *.so
 
