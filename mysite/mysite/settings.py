@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
@@ -35,7 +36,9 @@ INSTALLED_APPS = [
     "django.contrib.auth",          # фреймворк аутентификации
     "django.contrib.contenttypes",  # фреймворк типов контента
     "django.contrib.sessions",      # фреймворк сеансов
-    "django.contrib.messages",      # фреймворк сообщений
+    "django.contrib.messages",     # фреймворк сообщений
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
     "django.contrib.staticfiles",   # фреймворк управления статическими файлами# фреймворк сеансов
     "taggit",
     "blog.apps.BlogConfig",
