@@ -1,8 +1,9 @@
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import get_object_or_404, render
+from django.views.decorators.http import require_POST
 from django.views.generic import ListView
 from django.core.mail import send_mail
-from .forms import EmailPostForm
+from .forms import CommentForm, EmailPostForm
 from .models import Post
 
 
@@ -14,22 +15,6 @@ class PostListView(ListView):
     paginate_by = 3
     template_name = "blog/post/list.html"
 
-
-def post_list(request):
-    """Выводит список постов на экран"""
-    post_list = Post.published.all()
-    # Pagination with 3 posts per page
-    paginator = Paginator(post_list, 3)
-    page_number = request.GET.get("page", 1)
-    try:
-        posts = paginator.page(page_number)
-    except PageNotAnInteger:
-        # if page_number is not an integer get the first page
-        posts = paginator.page(1)
-    except EmptyPage:
-        # if page_number is out of range get last page of results
-        posts = paginator.page(paginator.num_pages)
-    return render(request, "blog/post/list.html", {"posts": posts})
 
 
 def post_detail(request, year, month, day, post):
@@ -78,3 +63,4 @@ def post_share(request, post_id):
     return render(
         request, "blog/post/share.html", {"post": post, "form": form, "sent": sent}
     )
+
