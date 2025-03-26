@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",      # фреймворк сеансов
     "django.contrib.messages",      # фреймворк сообщений
     "django.contrib.staticfiles",   # фреймворк управления статическими файлами# фреймворк сеансов
-    
+    "taggit",
     "blog.apps.BlogConfig",
+    
     
 ]
 
