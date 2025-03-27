@@ -2,6 +2,8 @@ from django import forms
 
 from .models import Comment
 
+class SearchForm(forms.Form):
+    query = forms.CharField()
 
 class EmailPostForm(forms.Form):
     """ Форма для отправки поста по e-mail """
