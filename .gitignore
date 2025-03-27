@@ -1,11 +1,13 @@
+# my-files
+chromedriver-linux64/
+env/
+mysite/blog/post_comment.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# my-files
-chromedriver-linux64/
-env/
 # C extensions
 *.so
 
@@ -157,6 +159,8 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+# vscode
+.vscode
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
