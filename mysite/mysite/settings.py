@@ -32,18 +32,17 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",         # сайт администрирования
-    "django.contrib.auth",          # фреймворк аутентификации
+    "django.contrib.admin",  # сайт администрирования
+    "django.contrib.auth",  # фреймворк аутентификации
     "django.contrib.contenttypes",  # фреймворк типов контента
-    "django.contrib.sessions",      # фреймворк сеансов
-    "django.contrib.messages",     # фреймворк сообщений
+    "django.contrib.sessions",  # фреймворк сеансов
+    "django.contrib.messages",  # фреймворк сообщений
     "django.contrib.sites",
     "django.contrib.sitemaps",
-    "django.contrib.staticfiles",   # фреймворк управления статическими файлами# фреймворк сеансов
+    "django.contrib.staticfiles",  # фреймворк управления статическими файлами# фреймворк сеансов
     "taggit",
     "blog.apps.BlogConfig",
-    
-    
+    "django.contrib.postgres",
 ]
 
 MIDDLEWARE = [
@@ -80,13 +79,17 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",  # меняем базу sqlite on postgresql
+        "NAME": "blog", 
+        "USER": "blog",
+        "PASSWORD": "qwerty",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
