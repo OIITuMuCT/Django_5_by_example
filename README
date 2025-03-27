@@ -1,0 +1,31 @@
+Chapter01
+•   Installing Python
+•   Creating a Python virtual environment
+•   Installing Django
+•   Creating and configuring a Django project
+•   Building a Django application
+•   Designing data models
+•   Creating and applying model migrations
+•   Setting up an administration site for your models
+•   Working with QuerySets and model managers
+•   Building views, templates, and URLs
+•   Understanding the Django request/response cycle
+
+Chapter02
+•   Using canonical URLs for models
+•   Creating SEO-friendly URLs for posts
+•   Adding pagination to the post list view
+•   Building class-based views
+•   Sending emails with Django
+•   Using Django forms to share posts via email
+•   Adding comments to posts using forms from models
+
+Chapter03
+•   Implementing tagging using django-taggit
+•   Retrieving posts by similarity
+•   Creating custom template tags and filters to display the latest posts and most commented posts
+•   Adding a sitemap to the site
+•   Creating feeds for blog posts
+•   Installing PostgreSQL
+•   Using fixtures to dump and load data into the database
+•   Implementing a full-text search engine with Django and PostgreSQL
