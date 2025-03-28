@@ -1,7 +1,8 @@
 from django.db import models
-from djnango.conf import settings
+from django.conf import settings
 
 class Profile(models.Model):
+    """ Profile user model """
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
