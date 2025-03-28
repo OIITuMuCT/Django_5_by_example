@@ -248,6 +248,10 @@ ul.messages li a.close {
 .social li.google {
     background: #de1710;
 }
+.social li.github {
+    background: #212529;
+    
+}
 
 
 /* images */
