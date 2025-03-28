@@ -45,3 +45,11 @@ Chapter05
 •   Running the development server through HTTPS using Django Extensions
 •   Adding authentication using GitHub
 •   Creating a profile for users that register with social authentication
+Chapter06
+•   Creating many-to-many relationships
+•   Customizing behavior for forms
+•   Using JavaScript with Django
+•   Building a JavaScript bookmarklet
+•   Generating image thumbnails using easy-thumbnails
+•   Implementing asynchronous HTTP requests with JavaScript and Django
+•   Building infinite scroll pagination
