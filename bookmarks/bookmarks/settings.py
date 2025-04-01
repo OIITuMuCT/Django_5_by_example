@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+from django.urls import reverse_lazy
 from decouple import config
 from pathlib import Path
 
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     "images.apps.ImagesConfig",
     "django_extensions",
     "easy_thumbnails",
+    'actions.apps.ActionsConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -160,3 +163,6 @@ SOCIAL_AUTH_PIPELINE = [
     "social_core.pipeline.user.user_details",
 
 ]
+ABSOLUTE_URL_OVERRIDES = {
+    "auth.user": lambda u: reverse_lazy("user_detail", args=[u.username])
+}
