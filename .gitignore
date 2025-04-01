@@ -2,6 +2,9 @@
 chromedriver-linux64/
 env/
 mysite/blog/post_comment.py
+media/
+.cert.cert
+.cert.key
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
