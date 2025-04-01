@@ -37,6 +37,7 @@ their password
 •   Functionality to display shared images and a system for users to share images from any website
 •   An activity stream that allows users to see the content uploaded by the people that they follow
 •   A follow system to allow users to follow each other on the website
+
 Chapter05
 •   Using the messages framework
 •   Building a custom authentication backend
@@ -45,6 +46,7 @@ Chapter05
 •   Running the development server through HTTPS using Django Extensions
 •   Adding authentication using GitHub
 •   Creating a profile for users that register with social authentication
+
 Chapter06
 •   Creating many-to-many relationships
 •   Customizing behavior for forms
@@ -53,3 +55,14 @@ Chapter06
 •   Generating image thumbnails using easy-thumbnails
 •   Implementing asynchronous HTTP requests with JavaScript and Django
 •   Building infinite scroll pagination
+
+Chapter07
+•   Building a follow system
+•   Creating many-to-many relationships with an intermediate model
+•   Creating an activity stream application
+•   Adding generic relations to models
+•   Optimizing QuerySets for related objects
+•   Using signals for denormalizing counts
+•   Using Django Debug Toolbar to obtain relevant debug information
+•   Counting image views with Redis
+•   Creating a ranking of the most viewed images with Redis
