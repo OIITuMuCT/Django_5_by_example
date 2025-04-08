@@ -54,6 +54,10 @@ class Module(models.Model):
         return self.title
 
 class Content(models.Model):
+    """
+    Модель контент содержит обобщенное отношение, 
+    чтобы ассоциировать с ним разные типы содержимого 
+    """
     module = models.ForeignKey(
         Module,
         related_name='contents',
@@ -61,7 +65,41 @@ class Content(models.Model):
     )
     content_type = models.ForeignKey(
         ContentType,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        limit_choices_to={"model__in": ("text", "video", "image", "file")},
     )
     object_id = models.PositiveIntegerField()
     item = GenericForeignKey('content_type', 'object_id')
+
+class ItemBase(models.Model):
+    """ Абстрактная  модель, предоставляет поля всем моделям Content  """
+    owner = models.ForeignKey(
+        User,
+        related_name='%(classs)s_related',
+        on_delete=models.CASCADE
+    )
+    title = models.CharField(max_length=250)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+    
+    def __str__(self):
+        return self.title
+
+class Text(ItemBase):
+    """ Для хранения текстового содержимого """
+    content = models.TextField()
+
+class File(ItemBase):
+    """ Для хранения файлов """
+    content = models.FileField(upload_to='files')
+
+class Image(ItemBase):
+    """ Для хранения изображений """
+    content = models.ImageField(upload_to='images')
+
+class Video(ItemBase):
+    """ Для хранения видео """
+    url = models.URLField()
