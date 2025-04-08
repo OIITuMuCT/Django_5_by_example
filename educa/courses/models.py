@@ -75,7 +75,7 @@ class ItemBase(models.Model):
     """ Абстрактная  модель, предоставляет поля всем моделям Content  """
     owner = models.ForeignKey(
         User,
-        related_name='%(classs)s_related',
+        related_name='%(class)s_related',
         on_delete=models.CASCADE
     )
     title = models.CharField(max_length=250)
