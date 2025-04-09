@@ -75,7 +75,7 @@ class Content(models.Model):
     )
     object_id = models.PositiveIntegerField()
     item = GenericForeignKey('content_type', 'object_id')
-    order = OrderField(blank=True, for_fields=['course'])
+    order = OrderField(blank=True, for_fields=['module'])
 
     class Meta:
         """ Сортируют по полю order (Module.order) """
