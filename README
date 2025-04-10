@@ -66,3 +66,18 @@ Chapter07
 •   Using Django Debug Toolbar to obtain relevant debug information
 •   Counting image views with Redis
 •   Creating a ranking of the most viewed images with Redis
+
+Chapter12
+•   Create models for the CMS
+•   Create fixtures for your models and apply them
+•   Use model inheritance to create data models for polymorphic content
+•   Create custom model fields
+•   Order course contents and modules
+•   Build authentication views for the CMS
+
+Chapter13
+•   Create a content management system (CMS) using class-based views and mixins
+•   Build formsets and model formsets to edit course modules and module contents
+•   Manage groups and permissions
+•   Implement a drag-and-drop functionality to reorder modules and content
+
