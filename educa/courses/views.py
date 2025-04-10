@@ -2,6 +2,7 @@ from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
 from django.db.models import Count
 from django.apps import apps
 from django.urls import reverse_lazy
+from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 from django.views.generic.base import TemplateResponseMixin, View
@@ -190,3 +191,8 @@ class CourseListView(TemplateResponseMixin, View):
                 'courses': courses
             }
         )
+
+class CourseDetailView(DetailView):
+    model = Course
+    template_name = 'courses/course/detail.html'
+
