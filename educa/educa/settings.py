@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "students.apps.StudentsConfig",
     "embed_video",
     "debug_toolbar",
+    "redisboard",
 ]
 
 MIDDLEWARE = [
@@ -138,13 +139,15 @@ LOGIN_URL = "login"
 LOGOUT_URL = "logout"
 
 
+# CACHES = {
+#     # settings memcached
+#     # "default": {
+#     #     "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
+#     #     "LOCATION": "127.0.0.1:11211",
+#     # }
+# }
+# settings redis
 CACHES = {
-    # settings memcached
-    # "default": {
-    #     "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
-    #     "LOCATION": "127.0.0.1:11211",
-    # }
-    # settings redis
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
         'LOCATION': 'redis://127.0.0.1:6379',
@@ -159,4 +162,3 @@ CACHE_MIDDLEWARE_KEY_PREFIX = 'educa'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
-
