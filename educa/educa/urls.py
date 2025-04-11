@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
 from courses.views import CourseListView
+from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     path("accounts/login/", auth_views.LoginView.as_view(), name="login"),
@@ -29,7 +30,7 @@ urlpatterns = [
     path('', CourseListView.as_view(), name='course_list'),
     path('students/', include('students.urls')),
     
-]
+] + debug_toolbar_urls()
 
 if settings.DEBUG:
     urlpatterns += static(
