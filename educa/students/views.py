@@ -27,6 +27,7 @@ class StudentRegistrationView(CreateView):
 class StudentEnrollCourseView(LoginRequiredMixin, FormView):
     course = None
     form_class = CourseEnrollForm
+
     def form_valid(self, form):
         self.course = form.cleaned_data['course']
         self.course.students.add(self.request.user)
@@ -52,7 +53,7 @@ class StudentCourseDetailView(LoginRequiredMixin, DetailView):
 
     def get_queryset(self):
         qs = super().get_queryset()
-        return qs.filter(students_=[self.request.user])
+        return qs.filter(students__in=[self.request.user])
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
