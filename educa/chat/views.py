@@ -13,4 +13,4 @@ def course_chat_room(request, course_id):
         return HttpResponseForbidden()
     return render(request, 'chat/room.html', {'course': course})
 
-# Create your views here.
+
