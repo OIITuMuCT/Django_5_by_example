@@ -81,3 +81,46 @@ Chapter13
 •   Manage groups and permissions
 •   Implement a drag-and-drop functionality to reorder modules and content
 
+Chapter14
+•   Create public views for displaying course information
+•   Build a student registration system
+•   Manage student enrollment in courses
+•   Render diverse content for course modules
+•   Install and configure Memcached
+•   Cache content using the Django cache framework
+•   Use the Memcached and Redis cache backends
+•   Monitor your Redis server in the Django administration site
+
+Chapter15
+•   Install Django REST framework
+•   Create serializers for your models
+•   Build a RESTful API
+•   Implement serializer method fields
+•   Create nested serializers
+•   Implement ViewSet views and routers
+•   Build custom API views
+•   Handle API authentication
+•   Add permissions to API views
+•   Create custom permissions
+•   Use the Requests library to consume the API
+
+Chapter16
+•   Add Channels to your project
+•   Build a WebSocket consumer and appropriate routing
+•   Implement a WebSocket client
+•   Enable a channel layer with Redis
+•   Make your consumer fully asynchronous
+•   Persist chat messages into the database
+
+Chapter17
+•   Configuring Django settings for multiple environments
+•   Using Docker Compose to run multiple services
+•   Setting up a web server with uWSGI and Django
+•   Serving PostgreSQL and Redis with Docker Compose
+•   Using the Django system check framework
+•   Serving NGINX with Docker
+•   Serving static assets through NGINX
+•   Securing connections through Transport Layer Security (TLS) / Secure Sockets Layer (SSL)
+•   Using the Daphne Asynchronous Server Gateway Interface (ASGI) server for Django Channels
+•   Creating a custom Django middleware
+•   Implementing custom Django management commands
