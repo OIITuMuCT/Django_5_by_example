@@ -11,7 +11,7 @@ class Message(models.Model):
     course = models.ForeignKey(
         'courses.Course',
         on_delete=models.PROTECT,
-        related_name='chat_message'
+        related_name='chat_messages'
     )
     content = models.TextField()
     sent_on = models.DateTimeField(auto_now_add=True)
