@@ -1,0 +1,9 @@
+Step 1:
+    Create a settings/ dir, Rename settings.py file to base.py
+
+step 2:
+    Edit the settings/base.py file and replace the following line:
+        BASE_DIR = Path(__file__).resolve().parent.parent
+        BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+Start server python manage.py runserver --settings=educa.settings.local
