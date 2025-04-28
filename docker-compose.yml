@@ -1,4 +1,5 @@
 services:
+
   db:
     image: postgres:16.2
     restart: always
@@ -8,19 +9,16 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
   cache:
-      image: redis:7.2.4
-      restart: always
-      volumes:
-        - ./data/cache:/data
+    image: redis:7.2.4
+    restart: always
+    volumes:
+      - ./data/cache:/data
+
   web:
     build: .
-    # А
-    # command: python /code/educa/manage.py runserver 0.0.0.0:8000
-    # command: ["./wait-for-it.sh", "db:5432", "--", 
-    #           "python", "/code/educa/manage.py", "runserver", 
-    #           "0.0.0.0:8000"]
-    command: ["./wait-for-it.sh", "db:5432", "--", 
+    command: ["./wait-for-it.sh", "db:5432", "--",
               "uwsgi", "--ini", "/code/config/uwsgi/uwsgi.ini"]
     restart: always
     volumes:
@@ -49,9 +47,9 @@ services:
   daphne:
     build: .
     working_dir: /code/educa/
-    command: ["./wait-for-it.sh", "db:5432", "--",
+    command: ["../wait-for-it.sh", "db:5432", "--",
               "daphne", "-b", "0.0.0.0", "-p", "9001",
-              "educa.asgi:application"]
+              "educa.asgi:application"] 
     restart: always
     volumes:
       - .:/code
