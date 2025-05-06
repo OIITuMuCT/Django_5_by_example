@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-u#*h&4@u^1kbyoq%z$j12y$+v@-uec_$l!=89-ksek2rv&kueo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
+    "payment.apps.PaymentConfig",
     "shop.apps.ShopConfig",
 ]
 
