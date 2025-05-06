@@ -1,6 +1,6 @@
 from decimal import Decimal
 import stripe
-from djnago.conf import settings
+from django.conf import settings
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from orders.models import Order
