@@ -3,8 +3,13 @@ import datetime
 from django.http import HttpResponse
 from django.contrib import admin
 from django.utils.safestring import mark_safe
+from django.urls import reverse
 
 from .models import Order, OrderItem
+
+def order_detail(obj):
+    url = reverse('orders:admin_order_detail', args=[obj.id])
+    return mark_safe(f'<a href="{url}">View</a>')
 
 def export_to_csv(modeladmin, request, queryset):
     opts = modeladmin.model._meta
@@ -62,6 +67,7 @@ class OrderAdmin(admin.ModelAdmin):
         order_payment,
         "created",
         "updated",
+        order_detail,
     ]
     list_filter = ['paid', 'created', 'updated']
     inlines = [OrderItemInline]
